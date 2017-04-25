@@ -13,6 +13,10 @@
   },
   "author": "usman jamil",
   "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  },
   "bugs": {
     "url": "https://github.com/usmanjamil83/friendfinder/issues"
   },
