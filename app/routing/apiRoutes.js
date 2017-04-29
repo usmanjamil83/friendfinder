@@ -18,6 +18,25 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function(req, res) {
-    res.json(data);
+  	res.json(data);
   });
+
+  app.post("/api/friends", function(req, res) {
+
+    var match = 1000;
+    var name = "";
+    for (i=0; i < data.length; i++){
+    	var total = 0;
+    	for (j=0; j < data[i].scores.length; j++) {
+    		total += data[i].scores[j];
+    	}
+    	if (match > total) {
+       match = total;
+       name = data[i];
+
+     }
+   }
+   data.push(req.body);
+   res.json(name);
+ });
 };
